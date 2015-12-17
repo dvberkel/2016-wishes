@@ -1,5 +1,12 @@
 /* Wish for 2016 */
 
+.board {
+    display: flex;
+    width: 162px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .tile {
     background-color: yellow;
     border-style: solid;
