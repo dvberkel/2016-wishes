@@ -6,6 +6,5 @@
 
     document.body.addEventListener('keydown', function(){
         model.rotate();
-        view.update();
     });
 })(wish);
