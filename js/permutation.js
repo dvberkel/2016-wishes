@@ -8,4 +8,9 @@
     Permutation.prototype.actOn = function(element){
         return this.image[element];
     };
+    Permutation.prototype.multiply = function(permutation){
+        return new Permutation(this.image.map(
+            function(element){ return permutation.actOn(element); }
+        ));
+    };
 })(window.wish = window.wish || {});
