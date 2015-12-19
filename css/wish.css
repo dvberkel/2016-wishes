@@ -2,19 +2,19 @@
 
 .board {
     display: flex;
-    width: 162px;
+    width: 651px;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .tile {
-    background-color: yellow;
+    background-image: url("../image/sun.jpg");
     border-style: solid;
     border-color: black;
     border-width: 2px;
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 213px;
+    height: 213px;
 }
 
 .blank.tile {
