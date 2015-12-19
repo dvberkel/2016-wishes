@@ -8,6 +8,7 @@
 }
 
 .tile {
+    color: white;
     background-image: url("../image/sun.jpg");
     border-style: solid;
     border-color: black;
