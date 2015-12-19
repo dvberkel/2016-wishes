@@ -17,6 +17,17 @@
     height: 213px;
 }
 
+.upper.left.tile { background-position: top left; }
+.upper.middle.tile { background-position: top center; }
+.upper.right.tile { background-position: top right; }
+.center.left.tile { background-position: center left; }
+.center.middle.tile { background-position: center center; }
+.center.right.tile { background-position: center right; }
+.lower.left.tile { background-position: bottom left; }
+.lower.middle.tile { background-position: bottom center; }
+.lower.right.tile { background-position: bottom right; }
+
 .blank.tile {
+    background-image: none;
     background-color: black;
 }
