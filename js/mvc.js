@@ -56,4 +56,17 @@
             tile.style.order = this.model.permutation.actOn(index);
         }.bind(this));
     };
+
+    var Controller = $.Controller = function(model, view){
+        this.model = model;
+        this.view = view;
+        this.initialize();
+    };
+    Controller.prototype.initialize = function(){
+        this.view.tiles.forEach(function(tile){
+            tile.addEventListener('click', function(e){
+                this.model.move(Number.parseInt(e.target.style.order));
+            }.bind(this));
+        }.bind(this));
+    };
 })(window.wish = window.wish || {});
