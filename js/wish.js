@@ -6,7 +6,7 @@
 
     tiles.forEach(function(tile){
         tile.addEventListener('click', function(e){
-            model.move(e.target.style.order);
+            model.move(Number.parseInt(e.target.style.order));
         });
     });
 })(wish);
