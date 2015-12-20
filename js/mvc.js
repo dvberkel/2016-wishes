@@ -19,6 +19,9 @@
     };
     Model.prototype = Object.create(Observable.prototype);
     Model.prototype.constructor = Model;
+    Model.prototype.move = function(tile){
+        console.log(tile);
+    };
     Model.prototype.rotate = function(){
         this.permutation = this.permutation.multiply(this.rotation);
         this.emit('changed');

@@ -4,7 +4,9 @@
     var tiles = window.tiles = wish.toArray(document.getElementsByClassName('tile'));
     var view = new wish.View(model, tiles);
 
-    document.body.addEventListener('keydown', function(){
-        model.rotate();
+    tiles.forEach(function(tile){
+        tile.addEventListener('click', function(e){
+            model.move(e.target.style.order);
+        });
     });
 })(wish);
