@@ -1,5 +1,6 @@
 (function(wish){
     var model = new wish.Model();
+    model.shuffle();
 
     var tiles = window.tiles = wish.toArray(document.getElementsByClassName('tile'));
     var view = new wish.View(model, tiles);

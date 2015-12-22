@@ -43,6 +43,17 @@
         this.permutation = this.permutation.multiply(transposition(a, b));
         this.emit('changed');
     };
+    Model.prototype.shuffle = function(k){
+        k = k || 10;
+        while (k > 0) {
+            var a = Math.floor(9 * Math.random());
+            var b = Math.floor(9 * Math.random());
+            if (a !== b) {
+                this.swap(a, b);
+                k--;
+            }
+        }
+    };
 
     var View = $.View = function(model, tiles){
         this.model = model;
