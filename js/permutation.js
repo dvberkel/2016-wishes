@@ -13,4 +13,9 @@
             function(element){ return permutation.actOn(element); }
         ));
     };
+    Permutation.prototype.isIdentity = function(){
+        return this.image.reduce(function(accumalator, element, index){
+            return accumalator && (element == index);
+        }, true);
+    };
 })(window.wish = window.wish || {});
