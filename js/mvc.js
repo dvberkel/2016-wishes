@@ -42,6 +42,12 @@
     Model.prototype.swap = function(a, b){
         this.permutation = this.permutation.multiply(transposition(a, b));
         this.emit('changed');
+        if (this.isSolved()){
+            this.emit('solved');
+        }
+    };
+    Model.prototype.isSolved = function(){
+        return this.permutation.isIdentity();
     };
     Model.prototype.shuffle = function(k){
         k = k || 10;
