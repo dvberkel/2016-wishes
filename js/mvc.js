@@ -94,15 +94,15 @@
         }.bind(this));
     };
 
-    var WishView = $.WishView = function(model, container){
+    var RevealView = $.RevealView = function(model, container){
         model.on('solved', this.reveal.bind(this));
         this.container = container;
         this.hide();
     };
-    WishView.prototype.hide = function(){
+    RevealView.prototype.hide = function(){
         this.container.style.display = 'none';
     };
-    WishView.prototype.reveal = function(){
+    RevealView.prototype.reveal = function(){
         this.container.style.display = 'block';
     };
 })(window.wish = window.wish || {});

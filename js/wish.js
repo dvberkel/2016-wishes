@@ -9,5 +9,5 @@
     new wish.Controller(model, view);
 
     var container = document.getElementById('wish');
-    new wish.WishView(model, container);
+    new wish.RevealView(model, container);
 })(wish);
