@@ -8,17 +8,24 @@ body {
 
 h1 {
     font-size: 60px;
+    text-align: center;
 }
 
 p {
     font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 651px;
+    text-align: center;
 }
 
 .board {
     display: flex;
-    width: 651px;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 651px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tile {
