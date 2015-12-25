@@ -49,6 +49,14 @@
     Model.prototype.isSolved = function(){
         return this.permutation.isIdentity();
     };
+    Model.prototype.isSolvable = function(){
+        var distance = manhattanDistance(positionOf(8), positionOf(this.permutation.actOn(8)));
+        if (distance % 2 === 0) {
+            return this.permutation.sign() === 1;
+        } else {
+            return this.permutation.sign() === -1;
+        }
+    };
     Model.prototype.shuffle = function(k){
         k = k || 10;
         while (k > 0) {
