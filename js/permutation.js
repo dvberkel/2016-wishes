@@ -25,6 +25,6 @@
                 product *= (this.image[i] - this.image[j]) / (i - j);
             }
         };
-        return Math.round(product);
+        return Math.sign(product);
     };
 })(window.wish = window.wish || {});
