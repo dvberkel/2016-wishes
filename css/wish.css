@@ -31,10 +31,10 @@ p {
 
 .tile {
     color: white;
-    background-image: url("../image/sun.jpg");
+    background-image: url("../image/family-puzzle.jpg");
     border-style: solid;
     border-color: black;
-    border-width: 2px;
+    border-width: 1px;
     display: block;
     width: 213px;
     height: 213px;
