@@ -1,5 +1,19 @@
 /* Wish for 2016 */
 
+@import url(http://fonts.googleapis.com/css?family=Marck+Script);
+
+body {
+    font-family: 'Marck Script', cursive;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p {
+    font-size: 30px;
+}
+
 .board {
     display: flex;
     width: 651px;
