@@ -68,6 +68,11 @@
             }
         }
     };
+    Model.prototype.solve = function(){
+        this.permutation = $.permutation(0, 1, 2, 3, 4, 5, 6, 7, 8);
+        this.emit('changed');
+        this.emit('solved');
+    };
 
     var View = $.View = function(model, tiles){
         this.model = model;

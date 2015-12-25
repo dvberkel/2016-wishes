@@ -13,4 +13,8 @@
 
     var helpContainer = document.getElementsByClassName('help')[0];
     new wish.RevealView(model, helpContainer, { 'signal': 'stumped' });
+
+    document.getElementById('solve').addEventListener('click', function(){
+        model.solve();
+    });
 })(wish);
