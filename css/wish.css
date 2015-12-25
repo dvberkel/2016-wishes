@@ -20,6 +20,10 @@ p {
     text-align: center;
 }
 
+.help {
+    text-align: center;
+}
+
 .board {
     display: flex;
     flex-direction: row;

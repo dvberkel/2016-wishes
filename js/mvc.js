@@ -94,8 +94,9 @@
         }.bind(this));
     };
 
-    var RevealView = $.RevealView = function(model, container){
-        model.on('solved', this.reveal.bind(this));
+    var RevealView = $.RevealView = function(model, container, options){
+        options = options || {};
+        model.on(options.signal || 'solved', this.reveal.bind(this));
         this.container = container;
         this.hide();
     };

@@ -9,5 +9,8 @@
     new wish.Controller(model, view);
 
     var container = document.getElementById('wish');
-    new wish.RevealView(model, container);
+    new wish.RevealView(model, container, { 'signal': 'solved' });
+
+    var helpContainer = document.getElementsByClassName('help')[0];
+    new wish.RevealView(model, helpContainer, { 'signal': 'stumped' });
 })(wish);
