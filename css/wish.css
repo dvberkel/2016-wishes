@@ -58,3 +58,13 @@ p {
     background-image: none;
     background-color: black;
 }
+
+.solved.tile {
+    border-style: none;
+    border-width: 0;
+}
+
+.solved.blank.tile {
+    background-image: url("../image/family-puzzle.jpg");
+    background-color: none;
+}

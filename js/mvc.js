@@ -83,12 +83,18 @@
         this.model = model;
         this.tiles = tiles;
         this.model.on('changed', this.update.bind(this));
+        this.model.on('solved', this.solved.bind(this));
         this.update();
     };
     View.prototype.update = function(){
         this.tiles.forEach(function(tile, index){
             tile.style.order = this.model.permutation.actOn(index);
         }.bind(this));
+    };
+    View.prototype.solved = function(){
+        this.tiles.forEach(function(tile){
+            tile.classList.add('solved');
+        });
     };
 
     var Controller = $.Controller = function(model, view){
