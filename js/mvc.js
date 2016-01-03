@@ -97,17 +97,49 @@
         });
     };
 
+    var doNothing = function(){ /* do nothing */ };
     var Controller = $.Controller = function(model, view){
         this.model = model;
         this.view = view;
+        this.handlerFor = {};
         this.initialize();
     };
     Controller.prototype.initialize = function(){
+        this.handlerFor[ 97] = /* a */ this.moveLeft.bind(this);
+        this.handlerFor[119] = /* w */ this.moveUp.bind(this);
+        this.handlerFor[115] = /* s */ this.moveDown.bind(this);
+        this.handlerFor[100] = /* d */ this.moveRight.bind(this);
+        document.body.addEventListener('keypress', this.handleKeypress.bind(this));
         this.view.tiles.forEach(function(tile){
             tile.addEventListener('click', function(e){
                 this.model.move(Number.parseInt(e.target.style.order));
             }.bind(this));
         }.bind(this));
+    };
+    Controller.prototype.moveTile = function(dx, dy){
+        var blankPosition = positionOf(this.model.permutation.actOn(8));
+        var targetPosition = { x: blankPosition.x + dx, y: blankPosition.y + dy };
+        if ((0 <= targetPosition.x && targetPosition.x < 3) &&
+            (0 <= targetPosition.y && targetPosition.y < 3)) {
+            var targetOrder = 3 * targetPosition.y + targetPosition.x;
+            this.model.move(targetOrder);
+        }
+    };
+    Controller.prototype.moveLeft = function(){
+        this.moveTile(-1, 0);
+    };
+    Controller.prototype.moveUp = function(){
+        this.moveTile(0, -1);
+    };
+    Controller.prototype.moveRight = function(){
+        this.moveTile(1, 0);
+    };
+    Controller.prototype.moveDown = function(){
+        this.moveTile(0, 1);
+    };
+    Controller.prototype.handleKeypress = function(event){
+        var handler = this.handlerFor[event.charCode] || doNothing;
+        handler.call();
     };
 
     var RevealView = $.RevealView = function(model, container, options){
